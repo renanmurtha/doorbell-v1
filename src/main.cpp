@@ -14,8 +14,6 @@
 #include <wifi.h>
 #include <mqtt.h>
 
-unsigned long currentMillis = millis();
-
 void setup()
 {
   Serial.begin(115200);
@@ -26,8 +24,9 @@ void setup()
   /* Conecta ao WiFi */
   connectToWifi();
 
-  // publishMsg(String(currentMillis).c_str());
+  /* Send msg */
   publishMsg("toc-toc");
+
   /*Deep sleep mode until RESET pin is connected to a LOW signal (pushbutton is pressed)*/
   ESP.deepSleep(0);
 }
