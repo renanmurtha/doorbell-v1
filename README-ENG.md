@@ -59,12 +59,12 @@ Using Json, I can do several actions using the json string.
 
   - JSON example
   <br/>
-  ![JSON example](img/json.png "JSON example")
+  ![JSON example](https://github.com/renanmurtha/doorbell-v1/blob/main/img/json.png "JSON example")
   
   - Node-Red (NODES)
   <br/>
-  ![Nodes I use (Node-Red)](img/node-red.png "Nodes I use (Node-Red)")
+  ![Nodes I use (Node-Red)](https://github.com/renanmurtha/doorbell-v1/blob/main/img/node-red.png "Nodes I use (Node-Red)")
 
    - Sketch
   <br/>
-  ![Sketch](img/Sketch.png "Sketch")
+  ![Sketch](https://github.com/renanmurtha/doorbell-v1/blob/main/img/Sketch.png "Sketch")
