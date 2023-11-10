@@ -1,3 +1,4 @@
+bool resetConfiguration = false;
 bool shouldSaveConfig = false;
 
 char mqtt_server[40];
@@ -21,7 +22,9 @@ void saveConfigCallback()
 {
     Serial.println("WiFi-> saved configuration");
     shouldSaveConfig = true;
+    resetConfiguration = false;
 }
+
 
 void setupSpiffs()
 {
@@ -75,7 +78,7 @@ void connectToWifi()
     WiFiManager wifiManager;
     // wifiManager.setTimeout(300);
     setupSpiffs();
-    
+
     wifiManager.setConfigPortalTimeout(180);
     wifiManager.setAPCallback(configModeCallback);
     wifiManager.setSaveConfigCallback(saveConfigCallback);
@@ -94,12 +97,17 @@ void connectToWifi()
 
     WiFi.mode(WIFI_STA);
 
+    if (resetConfiguration)
+    {
+        resetSetting();
+    }
+
     Serial.println();
     Serial.println("WIFI-> Connecting ...");
 
     while (!wifiManager.autoConnect(SENSOR_NAME))
     {
-      ledProcess();
+        ledProcess();
     }
 
     // read paramters

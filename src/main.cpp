@@ -13,6 +13,7 @@
 #include <WiFiManager.h>
 
 #include <led.h>
+#include <resetSettings.h>
 #include <define.h>
 #include <wifi.h>
 #include <mqtt.h>
