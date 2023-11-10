@@ -37,9 +37,9 @@ Aplicação em C/C++ voltada para IOT.
 
 
     ![WiFiManager 1](https://github.com/renanmurtha/doorbell-v1/blob/main/img/WiFiManager_1.png?raw=true "WiFiManager 1")
-    
 
-    ![WiFiManager 2](https://github.com/renanmurtha/doorbell-v1/blob/main/img/WiFiManager_1.png?raw=true "WiFiManager 2")
+
+    ![WiFiManager 2](https://github.com/renanmurtha/doorbell-v1/blob/main/img/WiFiManager_2.png?raw=true "WiFiManager 2")
 
 <br/>
 <br/>
