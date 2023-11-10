@@ -4,10 +4,12 @@ const int mqttPort = MQTT_PORT;
 const char *mqttuser = MQTT_USER;
 const char *mqttpass = MQTT_PASS;
 
+WiFiClient espClient;
 PubSubClient client(espClient);
 
 String sendJson = "";
 StaticJsonDocument<200> json;
+
 
 void publishMsg(String mensangem)
 {
