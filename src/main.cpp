@@ -8,16 +8,11 @@
 #include <WiFiUdp.h>
 
 #include <PubSubClient.h>
-#include <DNSServer.h>
-#include <ESP8266WebServer.h>
-#include <WiFiManager.h>
 
 #include <led.h>
-#include <resetSettings.h>
 #include <define.h>
 #include <wifi.h>
 #include <mqtt.h>
-
 
 void setup()
 {
@@ -30,7 +25,7 @@ void setup()
   connectToWifi();
 
   /* Send msg */
-  publishMsg("toc-toc");
+  publishMsg("SOS");
 
   /*Deep sleep mode until RESET pin is connected to a LOW signal (pushbutton is pressed)*/
   ESP.deepSleep(0);

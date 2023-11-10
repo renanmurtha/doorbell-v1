@@ -24,22 +24,7 @@ C/C++ application aimed at IOT.
 
 ## Adjustment in the project
 
-- Initial configuration via hotspot
-
-   - A network with the device name will be created, and can be accessed from any other device with WiFi.
- 
-   - Device name is initially: "DoorBell-v1"; which can be changed in define.h in the SENSOR_NAME constant
- 
-     - IP after connected: 192.168.4.1
- 
-     - Example and documentation: https://github.com/tzapu/WiFiManager
-
-
-
-    ![WiFiManager 1](https://github.com/renanmurtha/doorbell-v1/blob/main/img/WiFiManager_1.png?raw=true "WiFiManager 1")
-    
-
-    ![WiFiManager 2](https://github.com/renanmurtha/doorbell-v1/blob/main/img/WiFiManager_2.png?raw=true "WiFiManager 2")
+- Rename the file define_exemplo.h to define.h and rename the constants with the credentials of your mqtt server and wifi.
 
 <br/>
 <br/>
