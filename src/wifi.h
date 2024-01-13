@@ -5,7 +5,6 @@ WiFiClient espClient;
  */
 void connectToWifi()
 {
-    WiFi.begin(WIFI_SSID, WIFI_PASS);
     WiFi.persistent(false);
     WiFi.mode(WIFI_OFF);
     WiFi.mode(WIFI_STA);
