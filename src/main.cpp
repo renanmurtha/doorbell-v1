@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include <FS.h>
-#include <ArduinoJson.h>
 #include <LittleFS.h>
+#include <ArduinoJson.h>
 
 #include <ESP8266WiFi.h>
 #include <ESP8266mDNS.h>
@@ -13,52 +13,43 @@
 #include <define.h>
 #include <wifi.h>
 #include <mqtt.h>
-#include <EEPROM.h> // incluir a biblioteca
-
 int toggle;
 String msg;
-byte status;
+#include <setupSpiffs.h>
 
 void setup()
 {
   Serial.begin(115200);
   Serial.setTimeout(2000);
   delay(1000);
-
-  EEPROM.begin(4);                // Inicia a EEPROM com tamanho de 4 Bytes (minimo).
-  Serial.println(EEPROM.read(0)); // Mostra no Monitor oque há antes de efetuar a gravação
-
   pinMode(LED_BUILTIN, OUTPUT);
   ledOn();
 
   /* Conecta ao WiFi */
   connectToWifi();
 
-  /* EEPROM */
-  byte status = EEPROM.read(toggle);
-  delay(2000);
-  Serial.println("status: " + status);
-  switch (status)
+  /* Config json*/
+  setupSpiffs();
+
+  switch (status.toInt())
   {
   case 0:
-    status = 1;
+    status = "1";
     msg = "SOS: Ativado";
-    EEPROM.write(toggle, status);
+    saveJson(status.c_str());
     break;
   case 1:
-    status = 0;
+    status = "0";
     msg = "SOS: Desativado";
-    EEPROM.write(toggle, status);
+    saveJson(status.c_str());
     break;
 
   default:
-    status = 1;
+    status = "1";
     msg = "SOS: Ativado";
-    EEPROM.write(toggle, status);
+     saveJson(status.c_str());
     break;
   }
-  EEPROM.commit();
-  Serial.println("status depois: " + status);
   /* Send msg */
   publishMsg(msg);
 

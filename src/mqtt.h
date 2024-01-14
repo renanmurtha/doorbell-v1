@@ -9,6 +9,8 @@ PubSubClient client(espClient);
 String sendJson = "";
 StaticJsonDocument<200> json;
 
+String sensor_name = (TYPE_SENSOR_SOS == false ? SENSOR_NAME "DoorBell-v1" : SENSOR_NAME "SosButton-v1");
+
 void publishMsg(String mensangem)
 {
   client.setServer(mqttServer, mqttPort);
@@ -23,9 +25,10 @@ void publishMsg(String mensangem)
     {
       json["device"] = DEVICE_NAME;
       json["collection"] = COLLECTION;
-      json["message"] = mensangem;
-      json["sensor"] = SENSOR_NAME;
+      json["sensor"] = sensor_name;
       json["macAddress"] = MECADDRESS;
+      json["chipId"] = CHIP_ID;
+      json["message"] = String(mensangem);
 
       serializeJson(json, sendJson);
 
