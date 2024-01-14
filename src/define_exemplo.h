@@ -1,6 +1,11 @@
 #define DEVICE_NAME String(WiFi.hostname())
 #define MECADDRESS String(WiFi.macAddress())
-#define SENSOR_NAME "DoorBell-v1"
+#define CHIP_ID String(ESP.getChipId())
+
+/* Type (SOS BTN OR DoorBell) = Sensor name */
+#define TYPE_SENSOR_SOS true  
+#define SENSOR_NAME 
+
 
 /*MQTT credenciais*/
 #define MQTT_HOST "MQTT IP HOST"
